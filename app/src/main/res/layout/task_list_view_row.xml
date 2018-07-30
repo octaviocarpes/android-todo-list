@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="279dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/taskNameTextViewID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Task Description"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/taskDateTextViewID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Task Date" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/completeTaskButtonID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/complete_task_icon" />
+</LinearLayout>
