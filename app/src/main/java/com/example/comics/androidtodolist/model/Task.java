@@ -7,6 +7,8 @@ public class Task {
     private String currentDate;
     private boolean isDone;
 
+//    Criar singleton da task list e da done list
+
     public Task(String description) {
         this.description = description;
     }

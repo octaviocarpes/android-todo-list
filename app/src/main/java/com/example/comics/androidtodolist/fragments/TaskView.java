@@ -3,6 +3,7 @@ package com.example.comics.androidtodolist.fragments;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
@@ -25,8 +26,9 @@ public class TaskView extends Fragment {
 
     CustomListAdapter customListAdapter;
     ListView listView;
+    //Substituir pelo singleton
     ArrayList<Task> todoList = new ArrayList<>();
-    Button addTaskButton;
+    FloatingActionButton addTaskButton;
     private AlertDialog alert;
 
     @Nullable
@@ -37,22 +39,26 @@ public class TaskView extends Fragment {
         customListAdapter = new CustomListAdapter(this.getActivity(), todoList);
         listView = (ListView) view.findViewById(R.id.taskListViewID);
         listView.setAdapter(customListAdapter);
+        addTaskButton = (FloatingActionButton) view.findViewById(R.id.fab);
+        addTaskButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addTask();
+            }
+        });
 
         return view;
     }
 
-    public void addTask(View view){
+    public void addTask(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this.getActivity());
         builder.setTitle("Create Task");
         final EditText input = new EditText(this.getActivity());
         builder.setView(input);
         builder.setPositiveButton("Create", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface arg0, int arg1) {
-                Task task = new Task("input.getText().toString()");
-                Date currentTime = Calendar.getInstance().getTime();
-                task.setCurrentDate(currentTime.toString());
-                todoList.add(task);
-                customListAdapter.notifyDataSetChanged();
+                todoList.add(buildTask(input.getText().toString()));
+                customListAdapter.updateList(todoList);
             }
         });
 
@@ -65,5 +71,12 @@ public class TaskView extends Fragment {
         alert = builder.create();
 
         alert.show();
+    }
+
+    public Task buildTask(String description) {
+        Task task = new Task(description);
+        Date currentTime = Calendar.getInstance().getTime();
+        task.setCurrentDate(currentTime.toString());
+        return task;
     }
 }

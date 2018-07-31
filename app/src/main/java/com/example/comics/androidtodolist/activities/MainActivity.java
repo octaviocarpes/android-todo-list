@@ -1,8 +1,7 @@
 package com.example.comics.androidtodolist.activities;
 
-import android.content.DialogInterface;
+
 import android.support.design.widget.TabLayout;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -17,31 +16,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.comics.androidtodolist.R;
-import com.example.comics.androidtodolist.adapters.CustomListAdapter;
 import com.example.comics.androidtodolist.fragments.DoneTaskView;
 import com.example.comics.androidtodolist.fragments.TaskView;
-import com.example.comics.androidtodolist.model.Task;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
-
-    CustomListAdapter customListAdapter;
-    ListView listView;
-    ArrayList<Task> todoList = new ArrayList<>();
-    Button addTaskButton;
-    private AlertDialog alert;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,9 +130,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void addTask(View view){
-        FragmentManager manager = getSupportFragmentManager();
-        Fragment fragment = manager.findFragmentById(R.id.taskListViewID);
-        fragment.;
-    }
+
 }
