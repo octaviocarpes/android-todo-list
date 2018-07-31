@@ -41,21 +41,27 @@ public class CustomListAdapter extends ArrayAdapter {
         ImageButton completeTaskButton = (ImageButton) rowView.findViewById(R.id.completeTaskButtonID);
         completeTaskButton.setTag(position);
 
-        completeTaskButton.setOnClickListener(
-                new Button.OnClickListener() {
+        completeTaskButton.setOnClickListener(new Button.OnClickListener() {
                     @Override
-                    public void onClick(View v) {
-                        Integer index = (Integer) v.getTag();
-                        toDos.remove(index.intValue());
-                        notifyDataSetChanged();
+                    public void onClick(View view) {
+
+                        removeRow(view);
                     }
                 });
 
         return rowView;
     }
 
+    private void removeRow(View view) {
+        Integer index = (Integer) view.getTag();
+        toDos.remove(index.intValue());
+        notifyDataSetChanged();
+    }
+
     public void updateList(ArrayList<Task> items) {
         this.toDos = items;
         this.notifyDataSetChanged();
     }
+
+
 }

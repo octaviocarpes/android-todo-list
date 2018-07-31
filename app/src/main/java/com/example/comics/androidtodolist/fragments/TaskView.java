@@ -17,7 +17,9 @@ import com.example.comics.androidtodolist.R;
 import com.example.comics.androidtodolist.activities.MainActivity;
 import com.example.comics.androidtodolist.adapters.CustomListAdapter;
 import com.example.comics.androidtodolist.model.Task;
+import com.example.comics.androidtodolist.model.TaskManager;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -25,10 +27,9 @@ import java.util.Date;
 public class TaskView extends Fragment {
 
     CustomListAdapter customListAdapter;
-    ListView listView;
-    //Substituir pelo singleton
-    ArrayList<Task> todoList = new ArrayList<>();
     FloatingActionButton addTaskButton;
+
+    ListView listView;
     private AlertDialog alert;
 
     @Nullable
@@ -36,7 +37,7 @@ public class TaskView extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstaceState){
 
         View view = inflater.inflate(R.layout.task_view, container, false);
-        customListAdapter = new CustomListAdapter(this.getActivity(), todoList);
+        customListAdapter = new CustomListAdapter(this.getActivity(), TaskManager.getInstance().getTasks());
         listView = (ListView) view.findViewById(R.id.taskListViewID);
         listView.setAdapter(customListAdapter);
         addTaskButton = (FloatingActionButton) view.findViewById(R.id.fab);
@@ -57,8 +58,8 @@ public class TaskView extends Fragment {
         builder.setView(input);
         builder.setPositiveButton("Create", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface arg0, int arg1) {
-                todoList.add(buildTask(input.getText().toString()));
-                customListAdapter.updateList(todoList);
+                TaskManager.getInstance().addTask(buildTask(input.getText().toString()));
+                customListAdapter.updateList(TaskManager.getInstance().getTasks());
             }
         });
 
@@ -76,7 +77,8 @@ public class TaskView extends Fragment {
     public Task buildTask(String description) {
         Task task = new Task(description);
         Date currentTime = Calendar.getInstance().getTime();
-        task.setCurrentDate(currentTime.toString());
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MMM-yyyy h:mm a");
+        task.setCurrentDate(simpleDateFormat.format(currentTime));
         return task;
     }
 }
