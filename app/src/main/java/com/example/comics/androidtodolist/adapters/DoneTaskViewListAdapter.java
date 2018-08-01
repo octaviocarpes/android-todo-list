@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.comics.androidtodolist.R;
+import com.example.comics.androidtodolist.model.DoneTaskManager;
 import com.example.comics.androidtodolist.model.Task;
 
 import java.util.ArrayList;
@@ -45,16 +46,16 @@ public class DoneTaskViewListAdapter extends ArrayAdapter {
             @Override
             public void onClick(View view) {
                 removeRow(view);
+                updateList(DoneTaskManager.getInstance().getDoneTasks());
             }
         });
-
+        notifyDataSetChanged();
         return rowView;
     }
 
     private void removeRow(View view) {
         Integer index = (Integer) view.getTag();
         doneTasks.remove(index.intValue());
-        notifyDataSetChanged();
     }
 
     public void updateList(ArrayList<Task> items) {

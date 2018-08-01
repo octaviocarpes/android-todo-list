@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.example.comics.androidtodolist.R;
 import com.example.comics.androidtodolist.model.DoneTaskManager;
 import com.example.comics.androidtodolist.model.Task;
+import com.example.comics.androidtodolist.model.TaskManager;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -47,7 +48,7 @@ public class TaskViewListAdapter extends ArrayAdapter {
         completeTaskButton.setOnClickListener(new Button.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        DoneTaskManager.getInstance().addDoneTask(buildDoneTask(taskNameTextView.getText().toString(), taskDateTextView.getText().toString()));
+                        moveTaskToDone(view);
                         removeRow(view);
                     }
                 });
@@ -61,10 +62,15 @@ public class TaskViewListAdapter extends ArrayAdapter {
         notifyDataSetChanged();
     }
 
-    public Task buildDoneTask(String description, String date) {
-        Task task = new Task(description);
-        task.setCurrentDate(date);
-        return task;
+    private void moveTaskToDone(View view) {
+        Integer index = (Integer) view.getTag();
+        Task doneTask = TaskManager.getInstance().getTask(index);
+        Date currentTime = Calendar.getInstance().getTime();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MMM-yyyy h:mm a");
+        doneTask.setCompletionDate(simpleDateFormat.format(currentTime));
+        doneTask.setDone(true);
+        DoneTaskManager.getInstance().addDoneTask(doneTask);
+
     }
 
     public void updateList(ArrayList<Task> items) {

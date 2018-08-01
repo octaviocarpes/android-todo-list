@@ -78,4 +78,5 @@ public class TaskView extends Fragment {
         task.setCurrentDate(simpleDateFormat.format(currentTime));
         return task;
     }
+
 }

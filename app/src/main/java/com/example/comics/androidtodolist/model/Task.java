@@ -44,4 +44,14 @@ public class Task {
     public void setDone(boolean done) {
         isDone = done;
     }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "description='" + description + '\'' +
+                ", completionDate='" + completionDate + '\'' +
+                ", currentDate='" + currentDate + '\'' +
+                ", isDone=" + isDone +
+                '}';
+    }
 }
