@@ -10,13 +10,14 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/doneTaskDescriptionID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/doneTaskDateID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
@@ -28,14 +29,14 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/restoreTaskButtonID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/restore_icon24" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/deleteTaskButtonID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

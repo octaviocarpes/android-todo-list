@@ -9,24 +9,21 @@ import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
 import com.example.comics.androidtodolist.R;
-import com.example.comics.androidtodolist.activities.MainActivity;
-import com.example.comics.androidtodolist.adapters.CustomListAdapter;
+import com.example.comics.androidtodolist.adapters.TaskViewListAdapter;
 import com.example.comics.androidtodolist.model.Task;
 import com.example.comics.androidtodolist.model.TaskManager;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
 public class TaskView extends Fragment {
 
-    CustomListAdapter customListAdapter;
+    TaskViewListAdapter taskViewListAdapter;
     FloatingActionButton addTaskButton;
 
     ListView listView;
@@ -37,9 +34,9 @@ public class TaskView extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstaceState){
 
         View view = inflater.inflate(R.layout.task_view, container, false);
-        customListAdapter = new CustomListAdapter(this.getActivity(), TaskManager.getInstance().getTasks());
+        taskViewListAdapter = new TaskViewListAdapter(this.getActivity(), TaskManager.getInstance().getTasks());
         listView = (ListView) view.findViewById(R.id.taskListViewID);
-        listView.setAdapter(customListAdapter);
+        listView.setAdapter(taskViewListAdapter);
         addTaskButton = (FloatingActionButton) view.findViewById(R.id.fab);
         addTaskButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +56,7 @@ public class TaskView extends Fragment {
         builder.setPositiveButton("Create", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface arg0, int arg1) {
                 TaskManager.getInstance().addTask(buildTask(input.getText().toString()));
-                customListAdapter.updateList(TaskManager.getInstance().getTasks());
+                taskViewListAdapter.updateList(TaskManager.getInstance().getTasks());
             }
         });
 
