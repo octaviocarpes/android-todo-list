@@ -1,13 +1,22 @@
 package com.example.comics.androidtodolist.model;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+
+@Entity
 public class Task {
 
+    @ColumnInfo(name = "description")
     private String description;
-    private String completionDate;
-    private String currentDate;
-    private boolean isDone;
 
-//    Criar singleton da task list e da done list
+    @ColumnInfo(name = "completion_date")
+    private String completionDate;
+
+    @ColumnInfo(name = "current_date")
+    private String currentDate;
+
+    @ColumnInfo(name = "is_done")
+    private boolean isDone;
 
     public Task(String description) {
         this.description = description;
