@@ -2,9 +2,17 @@ package com.example.comics.androidtodolist.model;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.PrimaryKey;
+
+import io.reactivex.annotations.NonNull;
 
 @Entity
 public class Task {
+
+    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    private Long id;
 
     @ColumnInfo(name = "description")
     private String description;
@@ -18,6 +26,18 @@ public class Task {
     @ColumnInfo(name = "is_done")
     private boolean isDone;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Task() {
+    }
+
+    @Ignore
     public Task(String description) {
         this.description = description;
     }
