@@ -1,7 +1,7 @@
-package com.example.comics.androidtodolist.local;
+package mytodolist.androidtodolist.local;
 
-import com.example.comics.androidtodolist.database.ITaskDataSource;
-import com.example.comics.androidtodolist.model.Task;
+import mytodolist.androidtodolist.database.ITaskDataSource;
+import mytodolist.androidtodolist.model.Task;
 
 import java.util.List;
 

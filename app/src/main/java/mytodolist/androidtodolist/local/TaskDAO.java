@@ -1,11 +1,11 @@
-package com.example.comics.androidtodolist.local;
+package mytodolist.androidtodolist.local;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 
-import com.example.comics.androidtodolist.model.Task;
+import mytodolist.androidtodolist.model.Task;
 
 import java.util.List;
 

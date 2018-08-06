@@ -1,4 +1,4 @@
-package com.example.comics.androidtodolist.fragments;
+package mytodolist.androidtodolist.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -6,13 +6,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
-import com.example.comics.androidtodolist.R;
-import com.example.comics.androidtodolist.adapters.DoneTaskViewListAdapter;
-import com.example.comics.androidtodolist.model.DoneTaskManager;
+
+import mytodolist.androidtodolist.R;
+import mytodolist.androidtodolist.adapters.DoneTaskViewListAdapter;
+
+import mytodolist.androidtodolist.model.DoneTaskManager;
 
 public class DoneTaskView extends Fragment {
 

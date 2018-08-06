@@ -1,5 +1,4 @@
-package com.example.comics.androidtodolist.model;
-
+package mytodolist.androidtodolist.model;
 import java.util.ArrayList;
 
 public class TaskManager {

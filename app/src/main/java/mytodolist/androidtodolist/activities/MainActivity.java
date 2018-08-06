@@ -1,4 +1,4 @@
-package com.example.comics.androidtodolist.activities;
+package mytodolist.androidtodolist.activities;
 
 
 import android.support.design.widget.TabLayout;
@@ -11,9 +11,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 
-import com.example.comics.androidtodolist.R;
-import com.example.comics.androidtodolist.fragments.DoneTaskView;
-import com.example.comics.androidtodolist.fragments.TaskView;
+import mytodolist.androidtodolist.R;
+import mytodolist.androidtodolist.fragments.DoneTaskView;
+import mytodolist.androidtodolist.fragments.TaskView;
 
 
 public class MainActivity extends AppCompatActivity {

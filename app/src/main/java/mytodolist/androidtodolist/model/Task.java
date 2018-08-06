@@ -1,5 +1,4 @@
-package com.example.comics.androidtodolist.model;
-
+package mytodolist.androidtodolist.model;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;

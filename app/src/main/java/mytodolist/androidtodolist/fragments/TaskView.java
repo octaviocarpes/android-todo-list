@@ -1,4 +1,4 @@
-package com.example.comics.androidtodolist.fragments;
+package mytodolist.androidtodolist.fragments;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -12,14 +12,15 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.example.comics.androidtodolist.R;
-import com.example.comics.androidtodolist.adapters.TaskViewListAdapter;
-import com.example.comics.androidtodolist.model.Task;
-import com.example.comics.androidtodolist.model.TaskManager;
+import mytodolist.androidtodolist.R;
+import mytodolist.androidtodolist.adapters.TaskViewListAdapter;
+import mytodolist.androidtodolist.model.Task;
+import mytodolist.androidtodolist.model.TaskManager;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
 
 public class TaskView extends Fragment {
 

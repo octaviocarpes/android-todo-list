@@ -1,4 +1,4 @@
-package com.example.comics.androidtodolist.adapters;
+package mytodolist.androidtodolist.adapters;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -9,11 +9,14 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.comics.androidtodolist.R;
-import com.example.comics.androidtodolist.model.DoneTaskManager;
-import com.example.comics.androidtodolist.model.Task;
+
+import mytodolist.androidtodolist.R;
+import mytodolist.androidtodolist.model.DoneTaskManager;
+import mytodolist.androidtodolist.model.Task;
 
 import java.util.ArrayList;
+
+import mytodolist.androidtodolist.model.Task;
 
 public class DoneTaskViewListAdapter extends ArrayAdapter {
 

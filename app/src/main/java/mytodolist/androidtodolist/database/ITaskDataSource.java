@@ -1,6 +1,6 @@
-package com.example.comics.androidtodolist.database;
+package mytodolist.androidtodolist.database;
 
-import com.example.comics.androidtodolist.model.Task;
+import mytodolist.androidtodolist.model.Task;
 
 import java.util.List;
 

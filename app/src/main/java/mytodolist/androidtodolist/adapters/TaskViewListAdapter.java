@@ -1,7 +1,6 @@
-package com.example.comics.androidtodolist.adapters;
+package mytodolist.androidtodolist.adapters;
 
 import android.app.Activity;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,10 +9,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.comics.androidtodolist.R;
-import com.example.comics.androidtodolist.model.DoneTaskManager;
-import com.example.comics.androidtodolist.model.Task;
-import com.example.comics.androidtodolist.model.TaskManager;
+
+import mytodolist.androidtodolist.R;
+import mytodolist.androidtodolist.model.DoneTaskManager;
+import mytodolist.androidtodolist.model.Task;
+import mytodolist.androidtodolist.model.TaskManager;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
